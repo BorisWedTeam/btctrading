@@ -1,0 +1,69 @@
+<div id="header">
+    <div class="container" style="padding: 0px;">
+        <div class="header-logo">
+            <a href="https://wex.nz">
+                <img id="logo" src="/images/1px.png" class="main-s main-s-logo" alt="logo">
+            </a>
+        </div>
+
+        <div id="header-ticker">
+            <div id="orders-stats">
+                <div class="orderStats">Last: <strong>6694.02 USD</strong>
+                    <strong style="color:green" title="24 hour change">4.89%</strong>
+                </div>
+                <div class="orderStats">Low: <strong>6338.374 USD</strong></div>
+                <div class="orderStats">High: <strong>6699 USD</strong></div>
+                <div class="clear"></div>
+                <div class="orderStats">Volume: <strong>2641 BTC / 17099581 USD</strong></div>
+                <div class="orderStats">Server Time: <strong>01.11.17 19:52</strong></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div id="header-profile">
+            <div style="margin: auto; text-align: center; padding-top: 12px;">
+                <div id="login_con">
+                    <form id="login" onsubmit="return tryLogin()" action="https://wex.nz/login" method="post" style="margin-bottom:4px;">
+                        <p class="text-center margin-bottom-0">
+                            <input class="textbox" type="text" id="email" name="email" style="margin-bottom: 2px; width: 170px;" placeholder="E-Mail" value="">
+                        </p>
+                        <p class="text-center margin-bottom-0">
+                            <input class="textbox" type="password" id="password" name="password" style="margin-bottom: 2px; width: 170px;" placeholder="Password" value="">
+                        </p>
+                        <input type="hidden" id="PoW_nonce">
+                        <input type="submit" class="hiddenSubmit">
+                    </form>
+                    <p>
+                        <a href="javascript:void(0)" onclick="tryLogin()">Login</a>&nbsp;|&nbsp;
+                        <a href="https://wex.nz/reg">Sign up</a>&nbsp;|&nbsp;
+                        <a href="https://wex.nz/forgot">Lost password</a>
+                    </p>
+                </div>
+
+                <div id="otp_con" style="display:none; padding: 0 5px 0 5px">
+                    <form id="otp_form" onsubmit="return tryLogin()" action="https://wex.nz/login" method="post" style="margin-bottom:4px;"><p>Enter one-time password:</p><input id="login-otp" class="textbox" type="text" style="margin-bottom: 2px; width: 120px;" value="-" maxlength="6">
+                        <input type="submit" class="hiddenSubmit">
+                        <a href="javascript:void(0)" style="margin-left:5px" onclick="tryLogin()">Login</a>
+                        <p style="margin: 3px 0 0 0"><a href="https://wex.nz/otp_unlink">Lost your device?</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div id="nav-container">
+            <ul class="menu margin-bottom-0">
+                <li><span class="menuhover main-s main-s-navhover_bg">Trade</span></li>
+                <li><a href="https://wex.nz/tokens">Tokens</a></li>
+                <li><a href="https://wex.nz/news">News</a></li>
+                <li><a href="https://wex.kayako.com">Support</a></li>
+            </ul>
+            <div style="float: right; padding-right: 5px;">
+                <a href="https://wex.nz/setlocale/en"><img src="https://wex.nz/images/1px.png" class="main-s main-s-en" alt="en"></a>
+                <a href="https://wex.nz/setlocale/ru"><img src="https://wex.nz/images/1px.png" class="main-s main-s-ru" alt="ru"></a>
+                <a href="https://wex.nz/setlocale/cn"><img src="https://wex.nz/images/1px.png" class="main-s main-s-cn" alt="cn"></a>
+            </div>
+        </div>
+    </div>
+</div>

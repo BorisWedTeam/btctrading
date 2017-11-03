@@ -1,0 +1,411 @@
+/*
+* Custom Design
+*/
+.margin-bottom-0 {
+    margin-bottom: 0px !important;
+}
+
+.margin-top-0 {
+    margin-top: 0px !important;
+}
+
+.padding-0 {
+    padding: 0px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1000px !important;
+    }
+}
+
+body {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 12.8px;
+    background: #cbcbcb;
+    line-height: 1.2;
+}
+
+input, textarea, select {
+    border: 1px solid #aaa;
+    padding: 2px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    transition: border linear .1s,box-shadow linear .1s;
+    -moz-transition: border linear .1s,-moz-box-shadow linear .1s;
+    -webkit-transition: border linear .1s,-webkit-box-shadow linear .1s;
+    outline: none;
+    padding: 0px;
+}
+
+a {
+    outline: none;
+    color: #1d417a;
+    text-decoration: none;
+}
+
+h1 {
+    color: #193477;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+h3 {
+    color: #193477;
+    font-size: 12px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+.button, button {
+    width: 100px;
+    padding: 5px;
+    margin: 5px;
+    display: block;
+    text-align: center;
+    color: black;
+    background: -moz-linear-gradient(top,#ffffff 0%,#e7e7e7 100%);
+    background: -webkit-linear-gradient(top,#ffffff 0%,#e7e7e7 100%);
+    background: -o-linear-gradient(top,#ffffff 0%,#e7e7e7 100%);
+    background: -ms-linear-gradient(top,#ffffff 0%,#e7e7e7 100%);
+    background: linear-gradient(top,#ffffff 0%,#e7e7e7 100%);
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -webkit-font-smoothing: antialiased;
+    transition: border linear .2s,box-shadow linear .2s;
+    -moz-transition: border linear .2s,-moz-box-shadow linear .2s;
+    -webkit-transition: border linear .2s,-webkit-box-shadow linear .2s;
+    box-shadow: 0 0 3px #999;
+    -moz-box-shadow: 0 0 3px #999;
+    -webkit-box-shadow: 0 0 3px #999;
+}
+
+.button:active {
+    -webkit-box-shadow: inset 0 2px 3px #999;
+    -moz-box-shadow: inset 0 2px 3px #999;
+    box-shadow: inset 0 2px 3px #999;
+}
+
+.button:hover {
+    box-shadow: 0 0 5px #788;
+    -moz-box-shadow: 0 0 5px #788;
+    -webkit-box-shadow: 0 0 5px #788;
+    background: -moz-linear-gradient(top,#ffffff 0%,#d6d6d6 100%);
+    background: -webkit-linear-gradient(top,#ffffff 0%,#d6d6d6 100%);
+    background: -o-linear-gradient(top,#ffffff 0%,#d6d6d6 100%);
+    background: -ms-linear-gradient(top,#ffffff 0%,#d6d6d6 100%);
+    background: linear-gradient(top,#ffffff 0%,#d6d6d6 100%);
+    text-decoration: none;
+}
+
+.table th {
+    background: white url(../images/table_h.png);
+    height: 20px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.table td, .table th {
+    padding: 2px !important;
+    border-top: 0px !important;
+}
+
+.table tr:nth-child(odd) {
+    background: #f3f3f3;
+}
+
+.order:hover {
+    cursor: pointer;
+    background-image: url(../images/table_h.png)!important;
+}
+/*header area design start*/
+#header {
+    height: 120px;
+    background: url(../images/header_bg.png);
+}
+
+.header-logo {
+    width: 160px;
+    height: 82px;
+    overflow: hidden;
+    float: left;
+}
+
+#logo {
+    margin: 5px 0 0 0;
+}
+
+.main-s {
+    background: url(../images/main.png) no-repeat;
+}
+
+.main-s-logo {
+    width: 151px;
+    height: 53px;
+    background-position: -1px -51px;
+}
+
+#header-ticker {
+    width: 490px;
+    height: 82px;
+    overflow: hidden;
+    float: left;
+}
+
+#orders-stats {
+    margin: auto;
+    margin-top: 11px;
+    width: 520px;
+    color: #36348f;
+}
+
+.orderStats {
+    float: left;
+    margin-right: 6px;
+    padding: 0 2px 4px 0;
+}
+
+#header-profile {
+    width: 350px;
+    height: 82px;
+    overflow: hidden;
+    float: left;
+}
+
+.hiddenSubmit {
+    position: absolute;
+    left: -9999px;
+    width: 0;
+    height: 0;
+}
+
+#nav-container {
+    padding-top: 1px;
+    height: 31px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0px;
+}
+
+.menu li {
+    float: left;
+    margin-right: 5px;
+    position: relative;
+    width: 130px;
+    height: 30px;
+    margin-bottom: -2px;
+}
+
+.main-s-navhover_bg {
+    width: 130px;
+    height: 30px;
+    background-position: -1px -106px;
+}
+
+.menuhover {
+    line-height: 30px;
+    display: block;
+    color: #000;
+    width: 130px;
+    height: 30px;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+}
+
+.menu a {
+    line-height: 38px;
+    display: block;
+    color: black;
+    width: 130px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.main-s-en {
+    width: 24px;
+    height: 24px;
+    background-position: -63px -15px;
+}
+
+.main-s-ru {
+    width: 24px;
+    height: 24px;
+    background-position: -143px -1px;
+}
+
+.main-s-cn {
+    width: 24px;
+    height: 24px;
+    background-position: -37px -1px;
+}
+/*header area design end*/
+
+/*footer area design start*/
+#footer {
+    height: 60px;
+    padding-top: 10px;
+    background-image: url(../images/footer-pg.png);
+    background-size: auto 100%;
+}
+
+#footer-content {
+    margin: auto;
+}
+
+.copyrights {
+    padding: 0 0 0 10px;
+    font-size: 10px;
+    color: #9d9d9d;
+    margin-bottom: 0px;
+}
+
+.copyrights a {
+    color: #c2c2c2;
+}
+/*footer area design end*/
+
+/*content area design start*/
+.block {
+    padding: 5px;
+    background: white;
+    overflow: hidden;
+    margin: 0 7px 7px 0;
+    box-shadow: 0 0 4px #cecece;
+    -moz-box-shadow: 0 0 4px #cecece;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+
+.main-s-comm {
+    width: 10px;
+    height: 10px;
+    background-position: -63px -1px;
+}
+
+.tabla td, .tabla2 th {
+    padding: 5px;
+}
+
+.pairs {
+    list-style: none;
+}
+
+.pairs li {
+    float: left;
+    width: 60px;
+    border: 1px solid #323b57;
+    overflow: hidden;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    color: #323b57;
+    font-size: .7em;
+    text-align: center;
+    background: -moz-linear-gradient(top,#ffffff 0%,#d6d6d6 100%);
+    background: -webkit-linear-gradient(top,#ffffff 0%,#d6d6d6 100%);
+    background: -o-linear-gradient(top,#ffffff 0%,#d6d6d6 100%);
+    background: -ms-linear-gradient(top,#ffffff 0%,#d6d6d6 100%);
+    background: linear-gradient(top,#ffffff 0%,#d6d6d6 100%);
+    box-shadow: 0 0 5px #eee;
+    -moz-box-shadow: 0 0 5px #eee;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.pairs a:hover, .pairs-selected {
+    background: #323b57 url(../images/table_h.png)!important;
+    color: #ffffff!important;
+}
+
+.pairs a {
+    display: block;
+    text-decoration: none;
+    color: #323b57;
+}
+
+.inblock {
+    border: 1px solid #ebebeb;
+    padding: 5px;
+    background: white;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    display: inline-block;
+    width: 100%;
+}
+
+.order_header {
+    background: #f8f8ff url(../images/order_h.png);
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+.orders-loading {
+    float: right;
+    display: none;
+}
+
+#nChatCon {
+    width: 305px;
+    height: 459px;
+}
+
+#nChatSettings {
+    display: none;
+    position: absolute;
+    width: 220px;
+    height: 20px;
+    margin-left: 60px;
+    background: #f3f3f3;
+    opacity: .9;
+    padding: 3px 0 0 6px;
+}
+
+.main-s-settings {
+    width: 16px;
+    height: 16px;
+    background-position: -143px -27px;
+}
+
+#nChatSettingsIgnore {
+    display: none;
+    position: absolute;
+    width: 282px;
+    height: 433px;
+    background: #f3f3f3;
+    opacity: .95;
+    padding: 3px;
+}
+
+#nChat {
+    width: 305px;
+    height: 440px;
+    text-align: left;
+    overflow: auto;
+    word-wrap: break-word;
+    -webkit-overflow-scrolling: touch;
+}
+
+#cMenu {
+    width: 110px;
+    display: none;
+    position: absolute;
+    padding: 0;
+}
+/*content area design end*/
