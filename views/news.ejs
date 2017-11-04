@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<% include include/header %>
+
+<div class="container" style="padding: 0px; margin-top: 5px;">
+    <div style="width: 680px; float: left;">
+        <div class="block">
+            <h3 class="margin-top-0">Latest news:</h3>
+
+            <table class="tabla" style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <td style="width: 70px;"><b>31/10/17</b></td>
+                        <td><a href="https://wex.nz/news/4">WEX token</a></td>
+                        <td style="width: 40px;" class="small"><a href="https://wex.nz/news/4"><img style="margin-right: 4px" src="https://wex.nz/images/1px.png" class="main-s main-s-comm" alt="comm">0</a></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70px;"><b>12/10/17</b></td>
+                        <td><a href="https://wex.nz/news/3">Segwit2x</a></td>
+                        <td style="width: 40px;" class="small"><a href="https://wex.nz/news/3"><img style="margin-right: 4px" src="https://wex.nz/images/1px.png" class="main-s main-s-comm" alt="comm">0</a></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70px;"><b>19/09/17</b></td>
+                        <td><a href="https://wex.nz/news/2">Tokens!</a></td>
+                        <td style="width: 40px;" class="small"><a href="https://wex.nz/news/2"><img style="margin-right: 4px" src="https://wex.nz/images/1px.png" class="main-s main-s-comm" alt="comm">0</a></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70px;"><b>15/09/17</b></td>
+                        <td><a href="https://wex.nz/news/1">WEX. Rising.</a></td>
+                        <td style="width: 40px;" class="small"><a href="https://wex.nz/news/1"><img style="margin-right: 4px" src="https://wex.nz/images/1px.png" class="main-s main-s-comm" alt="comm">0</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div style="width: 320px; float: left;">
+        <% include include/partial/message %>
+    </div>
+</div>
+
+<% include include/footer %>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script language="javascript" src="js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("ul.menu").find("a").each(function() {
+            $(this)[0].className = '';
+        })
+
+        $("ul.menu").find("a").eq(2).addClass("menuhover main-s main-s-navhover_bg");
+    })
+</script>
+</html>

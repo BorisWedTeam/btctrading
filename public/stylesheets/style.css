@@ -233,6 +233,19 @@ p {
     font-weight: bold;
 }
 
+.menu a:hover {
+    line-height: 30px;
+    display: block;
+    color: #000;
+    width: 130px;
+    height: 30px;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    background: url(../images/main.png) no-repeat;
+    background-position: -1px -106px;
+}
+
 .main-s-en {
     width: 24px;
     height: 24px;

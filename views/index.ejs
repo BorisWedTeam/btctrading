@@ -97,11 +97,11 @@
                         <tbody>
                             <tr>
                                 <td style="width: 150px;">Amount BTC:</td>
-                                <td style="width: 153px;"><input id="b_btc" style="width: 90px;" maxlength="25" type="text" value="0" onkeyup="usd_calc(&quot;b_btc&quot;, &quot;b_price&quot;, &quot;b_all&quot;); comm_replace(this);"></td>
+                                <td style="width: 153px;"><input id="b_btc" style="width: 90px;" maxlength="25" type="text" value="0" onkeyup="usd_calc(); comm_replace(this);"></td>
                             </tr>
                             <tr class="price-row">
                                 <td>Price per BTC:</td>
-                                <td><input id="b_price" style="width: 90px;" type="text" maxlength="8" value="7059.001" onkeyup="usd_calc(&quot;b_btc&quot;, &quot;b_price&quot;, &quot;b_all&quot;); comm_replace(this);"> USD</td>
+                                <td><input id="b_price" style="width: 90px;" type="text" maxlength="8" value="7059.001" onkeyup="usd_calc(); comm_replace(this);"> USD</td>
                             </tr>
                             <tr>
                                 <td>Total:</td>
@@ -118,9 +118,9 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="javascript:void(0)" onclick="ex_calculate(&quot;buy&quot;,1)" class="button" style="float: left;">Calculate</a>
+                                    <a href="javascript:void(0)" onclick="ex_calculate()" class="button" style="float: left;">Calculate</a>
                                     <div id="b_loading" class="order_calc_load"></div>
-                                    <a href="javascript:void(0)" onclick="ex_trade(&quot;buy&quot;,1)" class="button" style="float: right; width:115px">Buy BTC</a>
+                                    <a href="javascript:void(0)" onclick="ex_trade()" class="button" style="float: right; width:115px">Buy BTC</a>
                                     <div id="b_error" class="order_error main-s main-s-trade_error"></div>
                                     <div class="clear"></div>
                                 </td>
@@ -435,7 +435,7 @@
                     <div class="inblock order_header">
                         <div style="width: 130px; float: left;">Your balance:
                             <p>
-                                <a href="javascript:void(0)" onclick="all_money(&quot;cur2_full&quot;, &quot;s_btc&quot;)">
+                                <a href="javascript:void(0)" onclick="all_money()">
                                     <b>
                                         <span id="cur2" class="money_btc">0</span><input type="hidden" id="cur2_full" value="0"> BTC
                                     </b>
@@ -450,11 +450,11 @@
                         <tbody>
                             <tr>
                                 <td style="width: 150px;">Amount BTC:</td>
-                                <td style="width: 153px;"><input id="s_btc" style="width: 90px;" maxlength="25" type="text" value="0" onkeyup="usd_calc(&quot;s_btc&quot;, &quot;s_price&quot;, &quot;s_all&quot;); comm_replace(this);"></td>
+                                <td style="width: 153px;"><input id="s_btc" style="width: 90px;" maxlength="25" type="text" value="0" onkeyup="usd_calc(); comm_replace(this);"></td>
                             </tr>
                             <tr class="price-row">
                                 <td>Price per BTC:</td>
-                                <td><input id="s_price" style="width: 90px;" type="text" maxlength="8" value="7059" onkeyup="usd_calc(&quot;s_btc&quot;, &quot;s_price&quot;, &quot;s_all&quot;); comm_replace(this);"> USD</td>
+                                <td><input id="s_price" style="width: 90px;" type="text" maxlength="8" value="7059" onkeyup="usd_calc(); comm_replace(this);"> USD</td>
                             </tr>
                             <tr>
                                 <td>Total:</td>
@@ -471,9 +471,9 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="javascript:void(0)" onclick="ex_calculate(&quot;sell&quot;,1)" class="button" style="float: left;">Calculate</a>
+                                    <a href="javascript:void(0)" onclick="ex_calculate()" class="button" style="float: left;">Calculate</a>
                                     <div id="s_loading" class="order_calc_load"></div>
-                                    <a href="javascript:void(0)" onclick="ex_trade(&quot;sell&quot;,1)" class="button" style="float: right; width:115px">Sell BTC</a>
+                                    <a href="javascript:void(0)" onclick="ex_trade()" class="button" style="float: right; width:115px">Sell BTC</a>
                                     <div id="s_error" class="order_error main-s main-s-trade_error"></div>
                                     <div class="clear"></div>
                                 </td>
@@ -1110,4 +1110,14 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script language="javascript" src="js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("ul.menu").find("a").each(function() {
+            $(this)[0].className = '';
+        })
+
+        $("ul.menu").find("a").eq(0).addClass("menuhover main-s main-s-navhover_bg");
+    })
+</script>
 </html>
