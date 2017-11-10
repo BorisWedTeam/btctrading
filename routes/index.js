@@ -26,11 +26,13 @@ router.get('/', function (req, res, next) {
 
             if((month == prices[i].month) && (day == prices[i].day) && (hour == prices[i].hour)) {
                 tmpArray.push(parseFloat(prices[i].price));
-            } else {
-                tileObj['x'] = new Date(2017, prices[i].month, prices[i].day, prices[i].hour, 00).getTime();
-                tileObj['y'] = tmpArray;
-                dataPoints.push(tileObj);
 
+                if(tmpArray.length == 4) {
+                    tileObj['x'] = new Date(2017, prices[i].month, prices[i].day, prices[i].hour, 00).getTime();
+                    tileObj['y'] = tmpArray;
+                    dataPoints.push(tileObj);
+                }
+            } else {
                 month = prices[i].month;
                 day = prices[i].day;
                 hour = prices[i].hour;
@@ -64,11 +66,13 @@ router.get('/tokens', function (req, res, next) {
 
             if((month == prices[i].month) && (day == prices[i].day) && (hour == prices[i].hour)) {
                 tmpArray.push(parseFloat(prices[i].price));
-            } else {
-                tileObj['x'] = hour;
-                tileObj['y'] = tmpArray;
-                dataPoints.push(tileObj);
 
+                if(tmpArray.length == 4) {
+                    tileObj['x'] = new Date(2017, prices[i].month, prices[i].day, prices[i].hour, 00).getTime();
+                    tileObj['y'] = tmpArray;
+                    dataPoints.push(tileObj);
+                }
+            } else {
                 month = prices[i].month;
                 day = prices[i].day;
                 hour = prices[i].hour;
