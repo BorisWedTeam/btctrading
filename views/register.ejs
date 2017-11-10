@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<% include include/header %>
+
+<div class="container" style="padding: 0px; margin-top: 5px;">
+    <div class="block">
+        <%if (message) { %>
+            <div class="alert alert-danger fade in alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                <%= message %>
+            </div>
+        <% } %>
+
+        <h1 class="text-center">Sign up</h1>
+
+        <form id="reg_form" action="/register" method="post" autocomplete="off">
+            <table style="width: 450px; margin: auto;" class="tabla">
+                <tbody>
+                    <tr>
+                        <td colspan="2"><b>For the safety of your funds it is strongly recommended to use email with a two-factor authentication. For example <a href="https://gmail.com">GMail</a>.</b></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 200px;">Name:</td>
+                        <td style="width: 250px;">
+                            <input type="text" name="name" maxlength="64" class="reg_input" value="" required>
+                            <div id="em-regcheck" class="reghelp"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 200px;">E-mail:</td>
+                        <td style="width: 250px;">
+                            <input type="email" name="email" maxlength="64" class="reg_input" value="" required>
+                            <div id="em-regcheck" class="reghelp"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 200px;">Username</td>
+                        <td style="width: 250px;">
+                            <input type="text" name="username" maxlength="64" class="reg_input" value="" required>
+                            <div id="em-regcheck" class="reghelp"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td>
+                            <input type="password" id="inputPassword" name="password" maxlength="16" class="reg_input" value="" required>
+                            <div id="acc-regcheck" class="reghelp"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Retype Password:</td>
+                        <td>
+                            <input type="password" name="confirm_password" maxlength="16" class="reg_input" data-match="#inputPassword" required>
+                            <div id="acc-regcheck" class="reghelp"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="reg_eula" style="float: left;" onchange="reg_input_check(false)">
+                            <label id="reg_eula_label" for="reg_eula" style="margin-left: 10px; margin-top: 3px;" onfocus="clear_class(this)">I agree with <a href="https://wex.nz/page/1" target="_blank">terms</a>.</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-center" colspan="2">
+                            <button class="button center" type="submit" style="display: inline-block;">Sign up</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+
+<% include include/footer %>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script language="javascript" src="js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $("ul.menu").find("a").each(function() {
+            $(this)[0].className = '';
+        })
+    })
+</script>
+</html>

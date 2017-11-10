@@ -1093,6 +1093,7 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script language="javascript" src="js/bootstrap.min.js"></script>
+<script src="/javascripts/lib/canvasjs.min.js"></script>
 
 <script>
     $(document).ready(function() {
@@ -1101,6 +1102,31 @@
         })
 
         $("ul.menu").find("a").eq(1).addClass("menuhover main-s main-s-navhover_bg");
+
+        /*initialize canvas*/
+        var chart = new CanvasJS.Chart("chat_div",
+            {
+                title:{
+                },
+                zoomEnabled: true,
+                axisY: {
+                    includeZero:false,
+                },
+                axisX: {
+                    interval:1,
+                    labelAngle: -45,
+                    intervalType: "hour",
+                    valueFormatString: "00:'00'",
+                },
+                data: [
+                    {
+                        type: "candlestick",
+                        risingColor: "#ee001e",
+                        dataPoints: <%-JSON.stringify(dataPoints)%>
+                    }
+                ]
+            });
+        chart.render();
     })
 </script>
 </html>

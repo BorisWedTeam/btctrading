@@ -1,7 +1,7 @@
 <div id="header">
     <div class="container" style="padding: 0px;">
         <div class="header-logo">
-            <a href="https://wex.nz">
+            <a href="/">
                 <img id="logo" src="/images/1px.png" class="main-s main-s-logo" alt="logo">
             </a>
         </div>
@@ -23,20 +23,20 @@
         <div id="header-profile">
             <div style="margin: auto; text-align: center; padding-top: 12px;">
                 <div id="login_con">
-                    <form id="login" onsubmit="return tryLogin()" action="https://wex.nz/login" method="post" style="margin-bottom:4px;">
+                    <form id="login" action="/login" method="post" style="margin-bottom:4px;">
                         <p class="text-center margin-bottom-0">
-                            <input class="textbox" type="text" id="email" name="email" style="margin-bottom: 2px; width: 170px;" placeholder="E-Mail" value="">
+                            <input class="textbox" type="email" id="email" name="email" style="margin-bottom: 2px; width: 170px;" placeholder="E-Mail" required>
                         </p>
                         <p class="text-center margin-bottom-0">
-                            <input class="textbox" type="password" id="password" name="password" style="margin-bottom: 2px; width: 170px;" placeholder="Password" value="">
+                            <input class="textbox" type="password" id="password" name="password" style="margin-bottom: 2px; width: 170px;" placeholder="Password" required>
                         </p>
                         <input type="hidden" id="PoW_nonce">
-                        <input type="submit" class="hiddenSubmit">
+                        <input type="submit" id="submit" class="hiddenSubmit">
                     </form>
                     <p>
                         <a href="javascript:void(0)" onclick="tryLogin()">Login</a>&nbsp;|&nbsp;
-                        <a href="https://wex.nz/reg">Sign up</a>&nbsp;|&nbsp;
-                        <a href="https://wex.nz/forgot">Lost password</a>
+                        <a href="/register">Sign up</a>&nbsp;|&nbsp;
+                        <a href="/forgot-password">Lost password</a>
                     </p>
                 </div>
 
@@ -67,3 +67,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    function tryLogin() {
+        $("#login").find("#submit").click();
+    }
+</script>
