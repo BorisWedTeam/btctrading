@@ -102,7 +102,7 @@ var j = schedule.scheduleJob(rule1, function(){
         price.hour = parseInt(hour) ;
         price.day = parseInt(day);
         price.month = parseInt(month);
-        //price.save();
+        price.save();
     });
 });
 
@@ -123,7 +123,7 @@ var k = schedule.scheduleJob(rule2, function(){
         price.hour = parseInt(hour) ;
         price.day = parseInt(day);
         price.month = parseInt(month);
-        //price.save();
+        price.save();
     });
 });
 
@@ -144,7 +144,7 @@ var l = schedule.scheduleJob(rule3, function(){
         price.hour = parseInt(hour) ;
         price.day = parseInt(day);
         price.month = parseInt(month);
-        //price.save();
+        price.save();
     });
 });
 
@@ -165,7 +165,7 @@ var m = schedule.scheduleJob(rule4, function(){
         price.hour = parseInt(hour) ;
         price.day = parseInt(day);
         price.month = parseInt(month);
-        //price.save();
+        price.save();
     });
 });
 
