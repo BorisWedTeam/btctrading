@@ -1,75 +1,317 @@
-<div id="header">
-    <div class="container" style="padding: 0px;">
-        <div class="header-logo">
-            <a href="/">
-                <img id="logo" src="/images/1px.png" class="main-s main-s-logo" alt="logo">
-            </a>
-        </div>
 
-        <div id="header-ticker">
-            <div id="orders-stats">
-                <div class="orderStats">Last: <strong>6694.02 USD</strong>
-                    <strong style="color:green" title="24 hour change">4.89%</strong>
+    <div id="header" class="header no-print">
+        <div class="company-info-bar hide-for-small no-print"> 
+            <div class="row"> 
+                <div class="small-6 columns"> 
+                    <div class="company-info">
+                        <a href="javascript:toggleTopMenu()">Market Data Solutions <i class="bc-glyph-chevron-down js-company-info-icon"></i></a> 
+                    </div> 
+                </div> 
+                <!-- ngIf: selectMarket.visibility -->
+                <div class="small-6 columns text-right" data-ng-if="selectMarket.visibility"> 
+                    <div class="bc-bug-report"> 
+                        <a class="bc-bug-report__button" href="#"> Report an Issue </a> 
+                    </div> 
+                    <div class="bc-feedback">
+                        <a class="bc-feedback__button" target="_self" href="#">Site News</a> 
+                    </div> 
+                    <div class="select-market-block"> 
+                        <span class="market-block-title-outer">Market:</span> 
+                        <span class="market-dropdown-toggle" data-dropdown-toggle="#select-market-dropdown" data-trigger-event-on-click=""> 
+                            <span class="market-block-title-inner show-for-small-down">Market:</span> 
+                            <div class="bc-flag flag-us"></div>
+                            <i class="bc-glyph-chevron-down"></i> 
+                            <i class="bc-glyph-chevron-up"></i> 
+                        </span> 
+                        <ul class="f-dropdown market-dropdown" id="select-market-dropdown" style="display: none;">  
+                            <li> <a class="current-market"> <i class="bc-glyph-check"></i> <span>US</span><div class="bc-flag flag-us"></div> </a> </li>  
+                            <li><a data-change-market="" data-market="ca"> <i class="bc-glyph-check"></i> <span>Canada</span><div class="bc-flag flag-ca"></div> </a> </li> 
+                            <li> <a data-change-market="" data-market="uk"> <i class="bc-glyph-check"></i> <span>UK</span> <div class="bc-flag flag-gb"></div> </a> </li> 
+                            <li> <a data-change-market="" data-market="au"> <i class="bc-glyph-check"></i> <span>Australia</span> <div class="bc-flag flag-au"></div> </a> </li> 
+                        </ul> 
+                    </div> 
                 </div>
-                <div class="orderStats">Low: <strong>6338.374 USD</strong></div>
-                <div class="orderStats">High: <strong>6699 USD</strong></div>
-                <div class="clear"></div>
-                <div class="orderStats">Volume: <strong>2641 BTC / 17099581 USD</strong></div>
-                <div class="orderStats">Server Time: <strong>01.11.17 19:52</strong></div>
-                <div class="clear"></div>
-            </div>
-        </div>
-
-        <div id="header-profile">
-            <div style="margin: auto; text-align: center; padding-top: 12px;">
-                <div id="login_con">
-                    <form id="login" action="/login" method="post" style="margin-bottom:4px;">
-                        <p class="text-center margin-bottom-0">
-                            <input class="textbox" type="email" id="email" name="email" style="margin-bottom: 2px; width: 170px;" placeholder="E-Mail" required>
-                        </p>
-                        <p class="text-center margin-bottom-0">
-                            <input class="textbox" type="password" id="password" name="password" style="margin-bottom: 2px; width: 170px;" placeholder="Password" required>
-                        </p>
-                        <input type="hidden" id="PoW_nonce">
-                        <input type="submit" id="submit" class="hiddenSubmit">
-                    </form>
-                    <p>
-                        <a href="javascript:void(0)" onclick="tryLogin()">Login</a>&nbsp;|&nbsp;
-                        <a href="/register">Sign up</a>&nbsp;|&nbsp;
-                        <a href="/forgot-password">Lost password</a>
-                    </p>
+                <!-- end ngIf: selectMarket.visibility --> 
+            </div> 
+            <div class="company-info-inner"> 
+                <div class="row">
+                    <div class="small-12 column">
+                        <div class="company-info-row"> <h3 class="company-info-title">Financial Technology &amp; Market Data</h3> 
+                            <div>  
+                                <ul> 
+                                    <li> <a target="_self" href="#">Data Services</a> </li> 
+                                    <li> <a target="_self" href="#">Data Coverage</a> </li> 
+                                    <li> <a target="_self" href="#">Data Management</a> </li> 
+                                </ul>  
+                                <ul>  
+                                    <li> <a target="_self" href="#">Digital Solutions</a> </li>
+                                    <li> <a target="_self" href="#">OnDemand APIs</a> </li>  
+                                    <li> <a target="_self" href="#">Software</a> </li>  
+                                </ul> 
+                                <ul> 
+                                    <li> <a target="_self" href="#">Indexes</a> </li> 
+                                    <li> <a target="_self" href="#">Newswires</a> </li>
+                                    <li> <a target="_self" href="#">Ag Solutions</a> </li>  
+                                </ul>  
+                            </div>
+                            <a class="company-info-close" href="#"> <i class="bc-glyph-times"></i> </a> 
+                        </div>
+                    </div>
                 </div>
+            </div> 
+        </div>
+    
+        <div class="bc-header clearfix no-print" data-ng-controller="SearchPanel.Search as SearchCtrl"> 
+            <div class="row no-print">
+                <div class="column small-12">
+                    <div class="bc-logo">
+                        <a target="_self" href="/"> <img src="https://d1l7hzv7igdihb.cloudfront.net/img/bc-logo.svg" alt="Barchart.com"> </a>
+                    </div> 
+                    <a class="menu-icon right-off-canvas-toggle show-for-small-only no-print" data-trigger-event-on-click=""></a> 
+                    <div class="bc-user-block show-for-medium-up" data-dropdown-id="mobile">
+                        <div class="bc-user-block__button-wrapper" data-ng-show="!user">
+                            <a href="/signIn" class="bc-user-block__button">
+                                <span class="bc-glyph-user"></span>
+                                Log In or Sign Up
+                            </a>
+                        </div>
 
-                <div id="otp_con" style="display:none; padding: 0 5px 0 5px">
-                    <form id="otp_form" onsubmit="return tryLogin()" action="https://wex.nz/login" method="post" style="margin-bottom:4px;"><p>Enter one-time password:</p><input id="login-otp" class="textbox" type="text" style="margin-bottom: 2px; width: 120px;" value="-" maxlength="6">
-                        <input type="submit" class="hiddenSubmit">
-                        <a href="javascript:void(0)" style="margin-left:5px" onclick="tryLogin()">Login</a>
-                        <p style="margin: 3px 0 0 0"><a href="https://wex.nz/otp_unlink">Lost your device?</a></p>
-                    </form>
+                        <div class="bc-user-block__button-wrapper ng-hide" data-ng-show="user">
+
+                            <a class="bc-user-block__button js-user-account-desktop" data-bc-dropdown-fix="" data-dropdown-toggle="#dropdown-user-links-mobile">
+                                <span class="bc-glyph-user"></span>
+                                <span>My Account</span>
+                                <i class="bc-glyph-chevron-down right"></i>
+                                <i class="bc-glyph-chevron-up right"></i>
+                            </a>
+
+                            <ul id="dropdown-user-links-mobile" class="f-dropdown bc-dropdown-fix bc-user-block__dropdown">
+                                <!-- ngRepeat: (linkType, linkData) in userLinks track by $index --><li data-ng-repeat="(linkType, linkData) in userLinks track by $index">
+                                    <a target="_self" href="/my/watchlist">
+                                        Watchlist
+                                    </a>
+                                </li><!-- end ngRepeat: (linkType, linkData) in userLinks track by $index --><li data-ng-repeat="(linkType, linkData) in userLinks track by $index">
+                                    <a target="_self" href="/my/portfolio">
+                                        Portfolio
+                                    </a>
+                                </li><!-- end ngRepeat: (linkType, linkData) in userLinks track by $index --><li data-ng-repeat="(linkType, linkData) in userLinks track by $index">
+                                    <a target="_self" href="/my/alerts">
+                                        Alerts
+                                    </a>
+                                </li><!-- end ngRepeat: (linkType, linkData) in userLinks track by $index --><li data-ng-repeat="(linkType, linkData) in userLinks track by $index">
+                                    <a target="_self" href="/my/custom-views">
+                                        Custom Views
+                                    </a>
+                                </li><!-- end ngRepeat: (linkType, linkData) in userLinks track by $index --><li data-ng-repeat="(linkType, linkData) in userLinks track by $index">
+                                    <a target="_self" href="/my/custom-chart-templates">
+                                        Chart Templates
+                                    </a>
+                                </li><!-- end ngRepeat: (linkType, linkData) in userLinks track by $index --><li data-ng-repeat="(linkType, linkData) in userLinks track by $index">
+                                    <a target="_self" href="/my/profile">
+                                        My Profile
+                                    </a>
+                                </li><!-- end ngRepeat: (linkType, linkData) in userLinks track by $index --><li data-ng-repeat="(linkType, linkData) in userLinks track by $index">
+                                    <a target="_self" href="/my/site-preferences">
+                                        Site Preferences
+                                    </a>
+                                </li><!-- end ngRepeat: (linkType, linkData) in userLinks track by $index --><li data-ng-repeat="(linkType, linkData) in userLinks track by $index">
+                                    <a target="_self" href="/logout">
+                                        Log Out
+                                    </a>
+                                </li><!-- end ngRepeat: (linkType, linkData) in userLinks track by $index -->
+                            </ul>
+                        </div>
+                    </div> 
+                    <div class="mobile-search show-for-small-only no-print"> 
+                        <a class="bc-glyph bc-glyph-times hide-for-small-only close-search-panel-btn"></a>
+                        <a data-mobile-search-panel="" class="bc-glyph bc-glyph-search">&nbsp;</a> 
+                    </div> 
+                    <div class="search-panel clearfix hide-for-small-only"> 
+                        <div class="symbol-search js-quick-search"> 
+                        <form data-ng-submit="submitSearchForm()" autocomplete="off" class="ng-pristine ng-valid">
+                            <div class="field-left-icon field-symbol-search"> 
+                                <i class="bc-glyph-search show-for-small-only no-print"></i> 
+                                <input id="search" type="search" title="Search" name="search" autocomplete="off" autocorrect="off" autocapitalize="off" data-bc-autofocus="" data-bc-autofocus-priority="0" data-bc-disable-for-tablet="true" data-ng-model="search" data-ng-model-options="{ debounce: 100 }" data-ng-change="useSearch()" data-ng-keydown="keyboardNavigation($event)" placeholder="Search for a Symbol..." class="ng-pristine ng-valid ng-touched placeholder"> 
+                                <i class="search-clear ng-hide" data-ng-show="search" data-ng-click="clearSearch()"></i>
+                            </div>
+                            <script type="text/javascript">
+                                if (!/Tablet|iPad/i.test(navigator.userAgent)) {
+                                    document.getElementById('search').focus();
+                                }
+                                // Upon Angular loading this handler would be removed in (SearchPanel/controllers/search.js)
+                                document.getElementById('search').onkeypress = function (e) {
+                                    var event = e || window.event;
+                                    if ( event.keyCode === 13 ) {
+                                                window.location.href = '/quotes/' + this.value;
+                                                return false;
+                                    }
+                                };
+                            </script> 
+                            <button type="submit" data-ng-hide="search" class="bc-glyph-search hide-for-small">&nbsp;</button>
+                        </form>
+                        <div data-ng-show="searchResultsVisible" class="quick-search hide ng-hide" data-ng-class="{'hide': !searchResultsVisible}">
+                        <!-- ngRepeat: item in searchResults --> 
+                        <!-- ngRepeat: item in searchResults -->
+                            <div class="no-found hide columns">
+                            <div class="large-12 medium-12 small-12">
+                                <span>No Matching Results</span>
+                            </div>
+                            </div> 
+                                <div class="search-row columns advanced-search">
+                                    <a target="_self" data-ng-href="/search?q=" href="/search?q=">
+                                    <span>Advanced search</span> 
+                                        <i class="bc-glyph-chevron-right"></i> 
+                                    </a> 
+                                </div>
+                            </div> 
+                            </div>
+                                <div class="small-text">or</div>
+                                <div class="commodity-select"> 
+                                    <select name="commodity" data-barchart-nav-dropdown="">
+                                        <option value="">Select a Commodity</option> 
+                                        <optgroup label="--Grains and Oilseeds--">  
+                                            <option value="/futures/quotes/ZW*0/all-futures">Wheat</option>
+                                            <option value="/futures/quotes/ZC*0/all-futures">Corn</option>
+                                            <option value="/futures/quotes/ZS*0/all-futures">Soybeans</option>
+                                            <option value="/futures/quotes/ZM*0/all-futures">Soybean Meal</option>
+                                            <option value="/futures/quotes/ZL*0/all-futures">Soybean Oil</option>
+                                            <option value="/futures/quotes/ZO*0/all-futures">Oats</option> 
+                                            <option value="/futures/quotes/ZR*0/all-futures">Rough Rice</option>
+                                            <option value="/futures/quotes/KE*0/all-futures">Hard Red Wheat</option> 
+                                            <option value="/futures/quotes/MW*0/all-futures">Spring Wheat</option>
+                                            <option value="/futures/quotes/RS*0/all-futures">Canola</option>  
+                                        </optgroup> 
+                                        <optgroup label="--Currencies--"> 
+                                            <option value="/futures/quotes/DX*0/all-futures">U.S. Dollar Index</option> 
+                                            <option value="/futures/quotes/B6*0/all-futures">British Pound</option> 
+                                            <option value="/futures/quotes/D6*0/all-futures">Canadian Dollar</option> 
+                                            <option value="/futures/quotes/J6*0/all-futures">Japanese Yen</option> 
+                                            <option value="/futures/quotes/S6*0/all-futures">Swiss Franc</option> 
+                                            <option value="/futures/quotes/E6*0/all-futures">Euro FX</option>
+                                            <option value="/futures/quotes/A6*0/all-futures">Australian Dollar</option> 
+                                            <option value="/futures/quotes/M6*0/all-futures">Mexican Peso</option>
+                                            <option value="/futures/quotes/N6*0/all-futures">New Zealand Dollar</option> 
+                                            <option value="/futures/quotes/T6*0/all-futures">South African Rand</option> 
+                                            <option value="/futures/quotes/L6*0/all-futures">Brazilian Real</option> 
+                                            <option value="/futures/quotes/R6*0/all-futures">Russian Ruble</option> 
+                                        </optgroup>  
+                                        <optgroup label="--Energies--"> 
+                                            <option value="/futures/quotes/CL*0/all-futures">Crude Oil WTI</option>
+                                            <option value="/futures/quotes/HO*0/all-futures">ULSD NY Harbor</option>
+                                            <option value="/futures/quotes/RB*0/all-futures">Gasoline RBOB</option>
+                                            <option value="/futures/quotes/NG*0/all-futures">Natural Gas</option>
+                                            <option value="/futures/quotes/QA*0/all-futures">Crude Oil Brent</option>
+                                            <option value="/futures/quotes/ZK*0/all-futures">Ethanol</option>
+                                        </optgroup>
+                                        <optgroup label="--Financials--">
+                                            <option value="/futures/quotes/ZB*0/all-futures">T-Bond</option>
+                                            <option value="/futures/quotes/UD*0/all-futures">Ultra T-Bond</option>
+                                            <option value="/futures/quotes/ZN*0/all-futures">10 Year T-Note</option>
+                                            <option value="/futures/quotes/ZF*0/all-futures">5 Year T-Note</option>
+                                            <option value="/futures/quotes/ZT*0/all-futures">2 Year T-Note</option>
+                                            <option value="/futures/quotes/ZQ*0/all-futures">30 Day Fed Funds</option> 
+                                            <option value="/futures/quotes/GE*0/all-futures">Eurodollar</option> 
+                                        </optgroup> 
+                                        <optgroup label="--Indices--"> 
+                                            <option value="/futures/quotes/ES*0/all-futures">S&amp;P 500 E-Mini</option>
+                                            <option value="/futures/quotes/NQ*0/all-futures">Nasdaq 100 E-Mini</option>
+                                            <option value="/futures/quotes/YM*0/all-futures">Dow Indu E-Mini</option>
+                                            <option value="/futures/quotes/RJ*0/all-futures">Russell 2000 E-Mini</option>
+                                            <option value="/futures/quotes/EW*0/all-futures">S&amp;P Midcap E-Mini</option> 
+                                            <option value="/futures/quotes/VI*0/all-futures">S&amp;P 500 VIX</option>
+                                            <option value="/futures/quotes/GD*0/all-futures">S&amp;P GSCI</option> 
+                                        </optgroup> 
+                                        <optgroup label="--Meats--"> 
+                                            <option value="/futures/quotes/LE*0/all-futures">Live Cattle</option>  
+                                            <option value="/futures/quotes/GF*0/all-futures">Feeder Cattle</option>
+                                            <option value="/futures/quotes/HE*0/all-futures">Lean Hogs</option> 
+                                            <option value="/futures/quotes/DL*0/all-futures">Class III Milk</option>
+                                        </optgroup>  
+                                        <optgroup label="--Metals--">  
+                                            <option value="/futures/quotes/GC*0/all-futures">Gold</option> 
+                                            <option value="/futures/quotes/SI*0/all-futures">Silver</option>
+                                            <option value="/futures/quotes/HG*0/all-futures">High Grade Copper</option>  
+                                            <option value="/futures/quotes/PL*0/all-futures">Platinum</option>  
+                                            <option value="/futures/quotes/PA*0/all-futures">Palladium</option>  
+                                        </optgroup>  
+                                        <optgroup label="--Softs--">  
+                                            <option value="/futures/quotes/CT*0/all-futures">Cotton #2</option>  
+                                            <option value="/futures/quotes/OJ*0/all-futures">Orange Juice</option>  
+                                            <option value="/futures/quotes/KC*0/all-futures">Coffee</option>  
+                                            <option value="/futures/quotes/SB*0/all-futures">Sugar #11</option> 
+                                            <option value="/futures/quotes/CC*0/all-futures">Cocoa</option> 
+                                            <option value="/futures/quotes/LS*0/all-futures">Lumber</option>  
+                                        </optgroup>  
+                                        <optgroup label="--European Energies--">  
+                                            <option value="/futures/markets/CB*0/all-futures">ICE Crude Oil Brent</option>
+                                            <option value="/futures/markets/WI*0/all-futures">ICE Crude Oil WTI</option> 
+                                            <option value="/futures/markets/LF*0/all-futures">ICE Gas Oil</option>  
+                                            <option value="/futures/markets/NF*0/all-futures">ICE Natural Gas</option> 
+                                            <option value="/futures/markets/LG*0/all-futures">ICE RBOB Blendstock</option>
+                                            <option value="/futures/markets/LO*0/all-futures">ICE Heating Oil</option> 
+
+                                        </optgroup>  
+                                        <optgroup label="--European Financials--">  
+                                            <option value="/futures/markets/GG*0/all-futures">Euro Bund</option>  
+                                            <option value="/futures/markets/HR*0/all-futures">Euro Bobl</option>  
+                                            <option value="/futures/markets/HF*0/all-futures">Euro Schatz</option>  
+                                            <option value="/futures/markets/GX*0/all-futures">Euro Buxl</option>  
+                                            <option value="/futures/markets/FN*0/all-futures">Euro OAT Long-Term</option> 
+                                            <option value="/futures/markets/II*0/all-futures">Euro BTP Long-Term</option> 
+                                            <option value="/futures/markets/CF*0/all-futures">Eurex Conf Long-Term</option>
+                                            <option value="/futures/markets/IZ*0/all-futures">Euro Bono Long-Term</option>  
+                                            <option value="/futures/markets/G*0/all-futures">10-Year Long Gilt</option> 
+                                            <option value="/futures/markets/IM*0/all-futures">3-Month EuriBor</option>  
+                                            <option value="/futures/markets/L*0/all-futures">3-Month Sterling</option>  
+                                            <option value="/futures/markets/F*0/all-futures">3-Month Euroswiss</option> 
+                                        </optgroup>  
+                                        <optgroup label="--European Grains--">  
+                                            <option value="/futures/markets/XR*0/all-futures">Rapeseed</option>  
+                                            <option value="/futures/markets/LW*0/all-futures">Feed Wheat</option>  
+                                            <option value="/futures/markets/ML*0/all-futures">Milling Wheat</option>  
+                                            <option value="/futures/markets/XB*0/all-futures">Corn</option>  
+                                        </optgroup>  
+                                        <optgroup label="--European Indices--">  
+                                            <option value="/futures/markets/FX*0/all-futures">Euro Stoxx 50 Index</option>  
+                                            <option value="/futures/markets/X*0/all-futures">FTSE 100 Index</option>  
+                                            <option value="/futures/markets/DY*0/all-futures">DAX Index</option>  
+                                            <option value="/futures/markets/SZ*0/all-futures">Swiss Market Index</option>  
+                                            <option value="/futures/markets/MX*0/all-futures">CAC 40 Index</option>  
+                                            <option value="/futures/markets/AE*0/all-futures">AEX Index</option>  
+                                            <option value="/futures/markets/BE*0/all-futures">BEL 20</option>  
+                                            <option value="/futures/markets/PQ*0/all-futures">PSI 20</option>  
+                                            <option value="/futures/markets/EZ*0/all-futures">IBEX 35-Mini</option>  
+                                            <option value="/futures/markets/OX*0/all-futures">OMX Swedish Index</option>  
+                                            <option value="/futures/markets/DV*0/all-futures">VSTOXX Mini</option>  
+                                        </optgroup>  
+                                        <optgroup label="--European Metals--">  
+                                            <option value="/futures/markets/C-*0/all-futures">Steel Scrap</option>  
+                                            <option value="/futures/markets/R-*0/all-futures">Steel Rebar</option>  
+                                        </optgroup>  
+                                        <optgroup label="--European Softs--">  
+                                            <option value="/futures/markets/CA*0/all-futures">Cocoa #7</option>  
+                                            <option value="/futures/markets/RM*0/all-futures">Coffee Robusta 10-T</option>  
+                                            <option value="/futures/markets/SW*0/all-futures">Sugar White #5</option>  
+                                        </optgroup>  
+                                    </select> 
+                                </div> 
+                            </div> 
+                        </div> 
+                    </div> 
                 </div>
             </div>
-        </div>
-
-        <div class="clearfix"></div>
-
-        <div id="nav-container">
-            <ul class="menu margin-bottom-0">
-                <li><a class="menuhover main-s main-s-navhover_bg" href="/">Trade</a></li>
-                <li><a href="/tokens">Tokens</a></li>
-                <li><a href="/news">News</a></li>
-                <li><a href="/support">Support</a></li>
-            </ul>
-            <div style="float: right; padding-right: 5px;">
-                <a href="https://wex.nz/setlocale/en"><img src="https://wex.nz/images/1px.png" class="main-s main-s-en" alt="en"></a>
-                <a href="https://wex.nz/setlocale/ru"><img src="https://wex.nz/images/1px.png" class="main-s main-s-ru" alt="ru"></a>
-                <a href="https://wex.nz/setlocale/cn"><img src="https://wex.nz/images/1px.png" class="main-s main-s-cn" alt="cn"></a>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script>
     function tryLogin() {
         $("#login").find("#submit").click();
+    }
+    function toggleTopMenu(){
+        var infoMenu = $(".company-info-inner");
+        // if(infoMenu.css('display') == 'none'){
+        //     infoMenu.addClass('show-for-medium-up');
+        // }
+        // else{
+        //     infoMenu.removeClass('show-for-medium-up');
+        // }
+        infoMenu.toggleClass('show-for-medium-up');
     }
 </script>

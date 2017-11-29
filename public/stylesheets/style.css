@@ -15,13 +15,12 @@
 
 @media (min-width: 1200px) {
     .container {
-        width: 1000px !important;
+        width: 100% !important;
     }
 }
 
 body {
-    font-family: Verdana,Arial,sans-serif;
-    font-size: 12.8px;
+    font-family: "Noto Sans",sans-serif;
     background: #cbcbcb;
     line-height: 1.2;
 }
@@ -129,7 +128,24 @@ p {
     height: 120px;
     background: url(../images/header_bg.png);
 }
-
+.header .company-info-bar {
+    background: #000;
+    min-height: 30px;
+}
+.header .company-info-bar .company-info {
+    display: inline-block;
+    margin-bottom: 0;
+    color: #DDD;
+    font-size: 14px;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    padding: 4px 10px 5px;
+}
+.header .company-info-bar .company-info a {
+    font-size: 1rem;
+    color: #FFF;
+    text-decoration: none;
+}
 .header-logo {
     width: 160px;
     height: 82px;
@@ -229,8 +245,8 @@ p {
     height: 30px;
     text-align: center;
     text-decoration: none;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 1.2rem;
+    
 }
 
 .menu a:hover {

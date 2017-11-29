@@ -85,89 +85,89 @@ var options = {
 };
 
 //schedule tasks
-var rule1 = new schedule.RecurrenceRule();
-rule1.minute = 5;
-var j = schedule.scheduleJob(rule1, function(){
-    var date = new Date;
-    var hour = date.getHours();
-    var day = date.getDate();
-    var month = date.getMonth();
+// var rule1 = new schedule.RecurrenceRule();
+// rule1.minute = 5;
+// var j = schedule.scheduleJob(rule1, function(){
+//     var date = new Date;
+//     var hour = date.getHours();
+//     var day = date.getDate();
+//     var month = date.getMonth();
 
-    request(options, function(err, response, body) {
-        var response = JSON.parse(body);
-        var btcPrice = response[0].price_usd;
-        var price = new PriceModel();
-        price.price = btcPrice;
-        price.minute = 5;
-        price.hour = parseInt(hour) ;
-        price.day = parseInt(day);
-        price.month = parseInt(month);
-        price.save();
-    });
-});
+//     request(options, function(err, response, body) {
+//         var response = JSON.parse(body);
+//         var btcPrice = response[0].price_usd;
+//         var price = new PriceModel();
+//         price.price = btcPrice;
+//         price.minute = 5;
+//         price.hour = parseInt(hour) ;
+//         price.day = parseInt(day);
+//         price.month = parseInt(month);
+//         price.save();
+//     });
+// });
 
-var rule2 = new schedule.RecurrenceRule();
-rule2.minute = 20;
-var k = schedule.scheduleJob(rule2, function(){
-    var date = new Date;
-    var hour = date.getHours();
-    var day = date.getDate();
-    var month = date.getMonth();
+// var rule2 = new schedule.RecurrenceRule();
+// rule2.minute = 20;
+// var k = schedule.scheduleJob(rule2, function(){
+//     var date = new Date;
+//     var hour = date.getHours();
+//     var day = date.getDate();
+//     var month = date.getMonth();
 
-    request(options, function(err, response, body) {
-        var response = JSON.parse(body);
-        var btcPrice = response[0].price_usd;
-        var price = new PriceModel();
-        price.price = btcPrice;
-        price.minute = 20;
-        price.hour = parseInt(hour) ;
-        price.day = parseInt(day);
-        price.month = parseInt(month);
-        price.save();
-    });
-});
+//     request(options, function(err, response, body) {
+//         var response = JSON.parse(body);
+//         var btcPrice = response[0].price_usd;
+//         var price = new PriceModel();
+//         price.price = btcPrice;
+//         price.minute = 20;
+//         price.hour = parseInt(hour) ;
+//         price.day = parseInt(day);
+//         price.month = parseInt(month);
+//         price.save();
+//     });
+// });
 
-var rule3 = new schedule.RecurrenceRule();
-rule3.minute = 35;
-var l = schedule.scheduleJob(rule3, function(){
-    var date = new Date;
-    var hour = date.getHours();
-    var day = date.getDate();
-    var month = date.getMonth();
+// var rule3 = new schedule.RecurrenceRule();
+// rule3.minute = 35;
+// var l = schedule.scheduleJob(rule3, function(){
+//     var date = new Date;
+//     var hour = date.getHours();
+//     var day = date.getDate();
+//     var month = date.getMonth();
 
-    request(options, function(err, response, body) {
-        var response = JSON.parse(body);
-        var btcPrice = response[0].price_usd;
-        var price = new PriceModel();
-        price.price = btcPrice;
-        price.minute = 35;
-        price.hour = parseInt(hour) ;
-        price.day = parseInt(day);
-        price.month = parseInt(month);
-        price.save();
-    });
-});
+//     request(options, function(err, response, body) {
+//         var response = JSON.parse(body);
+//         var btcPrice = response[0].price_usd;
+//         var price = new PriceModel();
+//         price.price = btcPrice;
+//         price.minute = 35;
+//         price.hour = parseInt(hour) ;
+//         price.day = parseInt(day);
+//         price.month = parseInt(month);
+//         price.save();
+//     });
+// });
 
-var rule4 = new schedule.RecurrenceRule();
-rule4.minute = 50;
-var m = schedule.scheduleJob(rule4, function(){
-    var date = new Date;
-    var hour = date.getHours();
-    var day = date.getDate();
-    var month = date.getMonth();
+// var rule4 = new schedule.RecurrenceRule();
+// rule4.minute = 50;
+// var m = schedule.scheduleJob(rule4, function(){
+//     var date = new Date;
+//     var hour = date.getHours();
+//     var day = date.getDate();
+//     var month = date.getMonth();
 
-    request(options, function(err, response, body) {
-        var response = JSON.parse(body);
-        var btcPrice = response[0].price_usd;
-        var price = new PriceModel();
-        price.price = btcPrice;
-        price.minute = 50;
-        price.hour = parseInt(hour) ;
-        price.day = parseInt(day);
-        price.month = parseInt(month);
-        price.save();
-    });
-});
+//     request(options, function(err, response, body) {
+//         var response = JSON.parse(body);
+//         var btcPrice = response[0].price_usd;
+//         var price = new PriceModel();
+//         price.price = btcPrice;
+//         price.minute = 50;
+//         price.hour = parseInt(hour) ;
+//         price.day = parseInt(day);
+//         price.month = parseInt(month);
+//         price.save();
+//     });
+// });
 
 
 module.exports = app;

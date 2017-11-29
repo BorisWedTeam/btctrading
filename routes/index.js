@@ -86,7 +86,6 @@ router.get('/tokens', function (req, res, next) {
     });
 });
 
-
 /*login action*/
 //Setting the local strategy route
 router.post('/login', passport.authenticate('local', {
