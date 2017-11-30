@@ -8,7 +8,7 @@ var ObjectId = require('mongodb').ObjectID;
 var config = require('../config/config');
 var UserModel = require('../models/user');
 var PriceModel = require('../models/price');
-
+var url = require('url');
 
 
 /* GET home page. */
@@ -52,6 +52,10 @@ router.get('/news', function (req, res, next) {
     res.render('news', {title: 'BTC'});
 });
 
+router.get('/home', function (req, res, next){
+    res.render('home', {title: 'BTC',message:'You are logged in the page.'});
+});
+
 /* GET tokens page page. */
 router.get('/tokens', function (req, res, next) {
     /*get btc chart data*/
@@ -92,12 +96,12 @@ router.get('/tokens', function (req, res, next) {
 router.post('/login', passport.authenticate('local', {
     failureRedirect: '/',
 }), function(req, res) {
-    res.redirect('/');
+    res.redirect('/home');
 });
 
 /*GET forgot password page*/
 router.get('/forgot-password', function (req, res, next) {
-    res.render('forgot-password', {title: 'BTC', message: null});
+    res.render('forgot-password', {title: 'BTC'});
 });
 
 /*POST forgot password action*/
@@ -190,7 +194,7 @@ router.post('/register', function (req, res, next) {
     var retypePasswd = req.body.confirm_password;
 
     if(passwd != retypePasswd) {
-        res.render('register', {title: 'BTC', message: 'Password does not match!'});
+        res.render('/', {title: 'BTC', message: 'Password does not match!'});
     } else {
         var user = new UserModel(req.body);
 
@@ -206,7 +210,7 @@ router.post('/register', function (req, res, next) {
                         message = 'Please fill all the required fields';
                 }
 
-                return res.render('register', {
+                return res.render('/', {
                     title: 'BTC',
                     message: message,
                     user: user

@@ -9,9 +9,9 @@
 <body>
     <div class="inner-wrap">
         <% include include/header %>
-        <div class="main-content-wrapper content js-main-content-wrapper " data-ng-class="{'old-browser': oldBrowser}">
+        <div class="main-content-wrapper content js-main-content-wrapper ">
             <%if (message && message != "") { %>
-                <div class="alert alert-danger fade in alert-dismissable">
+                <div class="alert alert-success fade in alert-dismissable">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
                     <%= message %>
                 </div>
