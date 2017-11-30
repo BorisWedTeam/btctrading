@@ -14,36 +14,37 @@ var PriceModel = require('../models/price');
 /* GET home page. */
 router.get('/', function (req, res, next) {
     /*get btc chart data*/
-    PriceModel.find({}).sort({'month': -1, 'day': -1, 'hour': -1, 'minute': -1}).limit(92).exec(function(err, prices) {
-        var month = prices[0].month;
-        var day = prices[0].day;
-        var hour = prices[0].hour;
-        var dataPoints = [];
-        var tmpArray = [];
+    // PriceModel.find({}).sort({'month': -1, 'day': -1, 'hour': -1, 'minute': -1}).limit(92).exec(function(err, prices) {
+    //     var month = prices[0].month;
+    //     var day = prices[0].day;
+    //     var hour = prices[0].hour;
+    //     var dataPoints = [];
+    //     var tmpArray = [];
 
-        for(var i = 0; i < prices.length; i++) {
-            var tileObj = {};
+    //     for(var i = 0; i < prices.length; i++) {
+    //         var tileObj = {};
 
-            if((month == prices[i].month) && (day == prices[i].day) && (hour == prices[i].hour)) {
-                tmpArray.push(parseFloat(prices[i].price));
+    //         if((month == prices[i].month) && (day == prices[i].day) && (hour == prices[i].hour)) {
+    //             tmpArray.push(parseFloat(prices[i].price));
 
-                if(tmpArray.length == 4) {
-                    tileObj['x'] = new Date(2017, prices[i].month, prices[i].day, prices[i].hour, 00).getTime();
-                    tileObj['y'] = tmpArray;
-                    dataPoints.push(tileObj);
-                }
-            } else {
-                month = prices[i].month;
-                day = prices[i].day;
-                hour = prices[i].hour;
+    //             if(tmpArray.length == 4) {
+    //                 tileObj['x'] = new Date(2017, prices[i].month, prices[i].day, prices[i].hour, 00).getTime();
+    //                 tileObj['y'] = tmpArray;
+    //                 dataPoints.push(tileObj);
+    //             }
+    //         } else {
+    //             month = prices[i].month;
+    //             day = prices[i].day;
+    //             hour = prices[i].hour;
 
-                tmpArray = [];
-                tmpArray.push(parseFloat(prices[i].price));
-            }
-        }
+    //             tmpArray = [];
+    //             tmpArray.push(parseFloat(prices[i].price));
+    //         }
+    //     }
 
-        res.render('index', {title: 'BTC', dataPoints: dataPoints, message: req.flash('message')});
-    });
+    //     res.render('index', {title: 'BTC', dataPoints: dataPoints, message: req.flash('message')});
+    // });
+    res.render('index', {title: 'BTC',  message: req.flash('message')});
 });
 
 /* GET news page page. */
