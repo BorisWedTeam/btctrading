@@ -54,7 +54,7 @@
                                     <li> <a target="_self" href="#">Ag Solutions</a> </li>  
                                 </ul>  
                             </div>
-                            <a class="company-info-close" href="#"> <i class="bc-glyph-times"></i> </a> 
+                            <a class="company-info-close" href="javascript:closeMenu()"> <i class="bc-glyph-times"></i> </a> 
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     <a class="menu-icon right-off-canvas-toggle show-for-small-only no-print" data-trigger-event-on-click=""></a> 
                     <div class="bc-user-block show-for-medium-up" data-dropdown-id="mobile">
                         <div class="bc-user-block__button-wrapper" data-ng-show="!user">
-                            <a href="/signIn" class="bc-user-block__button">
+                            <a href="javascript:openUserModal()" class="bc-user-block__button">
                                 <span class="bc-glyph-user"></span>
                                 Log In or Sign Up
                             </a>
@@ -301,17 +301,146 @@
                 </div>
             </div>
 <script>
+    
     function tryLogin() {
         $("#login").find("#submit").click();
     }
     function toggleTopMenu(){
-        var infoMenu = $(".company-info-inner");
         // if(infoMenu.css('display') == 'none'){
         //     infoMenu.addClass('show-for-medium-up');
         // }
         // else{
         //     infoMenu.removeClass('show-for-medium-up');
         // }
+        var infoMenu = $(".company-info-inner");
         infoMenu.toggleClass('show-for-medium-up');
     }
+    function closeMenu(){
+        var infoMenu = $(".company-info-inner");
+        infoMenu.removeClass('show-for-medium-up');
+    }
+    function openUserModal(){
+        $('#myModal').modal('show');
+    }
 </script>
+
+<!-- Login and register Modal  -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×</button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Login/SignUp</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+                            <li><a href="#Registration" data-toggle="tab">Registration</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Login">
+                                <form id="login" role="form" action="/login" method="post" class="form-horizontal" >
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" type="email" id="email" name="email" style="margin-bottom: 2px; width: 170px;" placeholder="E-Mail" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" type="password" id="password" name="password" style="margin-bottom: 2px; width: 170px;" placeholder="Password" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            Submit</button>
+                                        <a href="javascript:;">Forgot your password?</a>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="Registration">
+                                <form role="form" class="form-horizontal" id="reg_form" action="/register" method="post" autocomplete="off">
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-2 control-label">
+                                            Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text"  class="form-control" name="name" maxlength="64" class="reg_input" value="" required>
+                                            <div id="em-regcheck" class="reghelp"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="col-sm-2 control-label">
+                                            Email</label>
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" name="email" maxlength="64" class="reg_input" value="" required>
+                                            <div id="em-regcheck" class="reghelp"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="password" class="col-sm-2 control-label">
+                                            Password</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword" name="password" maxlength="16" class="reg_input" value="" required>
+                                            <div id="acc-regcheck" class="reghelp"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                            <label for="password" class="col-sm-2 control-label">
+                                                Re-Password</label>
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" name="confirm_password" maxlength="16" class="reg_input" data-match="#inputPassword" required>
+                                                <div id="acc-regcheck" class="reghelp"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary btn-sm">
+                                                Sign up</button>
+                                            <button type="button" class="btn btn-default btn-sm">
+                                                Cancel</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="OR" class="hidden-xs">
+                            OR</div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row text-center sign-with">
+                            <div class="col-md-12">
+                                <h3>
+                                    Sign in with</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="btn-group btn-group-justified">
+                                    <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
+                                        Google</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
